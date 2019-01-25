@@ -1,0 +1,45 @@
+<ion-content>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)" (ionPull)="doPulling($event)">
+    <ion-refresher-content
+            pullingText="Tirer pour actualiser..."
+            refreshingText="Recheche de nouveaux postes...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let item of items" col-6 no-padding>
+        <ion-card>
+          <ion-card-header>
+          </ion-card-header>
+
+          <ion-card-content class="fixline">
+            {{item.title}}<br>
+            {{item.body}}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+
+    <ion-row>
+      <ion-col text-center>
+        <a href="/add-message"><ion-icon name="add-circle"></ion-icon></a>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+        <ion-button color="primary" href="/my-account">Mon Compte</ion-button>
+
+      </ion-col>
+    </ion-row>
+
+  </ion-toolbar>
+</ion-footer>
